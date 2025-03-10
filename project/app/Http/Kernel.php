@@ -37,6 +37,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \App\Http\Middleware\AuthGates::class,
         ],
 
         'api' => [
@@ -65,5 +66,9 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'role' => \App\Http\Middleware\CheckRole::class,
         'permission' => \App\Http\Middleware\CheckPermission::class,
+        
+        'admin' => \App\Http\Middleware\CheckAdminRole::class,
+        'staff' => \App\Http\Middleware\CheckStaffRole::class,
+        'candidat' => \App\Http\Middleware\CheckCandidatRole::class,
     ];
 }

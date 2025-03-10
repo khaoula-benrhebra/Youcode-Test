@@ -25,8 +25,14 @@ class Candidat extends Model
         return $this->hasMany(Document::class);
     }
     
-    // public function singUp()
-    // {
-    //     
-    // }
+    public function answers()
+{
+    return $this->hasMany(CandidatAnswer::class);
+}
+
+public function passedQuizzes()
+{
+    return $this->belongsToMany(Quiz::class, 'candidat_answers')
+                ->distinct();
+}
 }

@@ -36,3 +36,5 @@ CMD ["apache2-foreground"]
 # Installer Node.js et npm
 RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - \
     && apt-get install -y nodejs
+
+    

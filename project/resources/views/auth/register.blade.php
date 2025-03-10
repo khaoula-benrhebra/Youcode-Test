@@ -14,61 +14,76 @@
 
             <!-- First Name -->
             <div>
-                <x-label for="first_name" :value="__('First Name')" />
-                <x-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" required autofocus />
+                <x-label for="first_name" :value="__('Prénom')" />
+                <x-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')" required autofocus />
             </div>
 
             <!-- Last Name -->
             <div class="mt-4">
-                <x-label for="last_name" :value="__('Last Name')" />
-                <x-input id="last_name" class="block mt-1 w-full" type="text" name="last_name" required />
-            </div>
-
-            <!-- Date of Birth -->
-            <div class="mt-4">
-                <x-label for="date_of_birth" :value="__('Date of Birth')" />
-                <x-input id="date_of_birth" class="block mt-1 w-full" type="date" name="date_of_birth" required />
-            </div>
-
-            <!-- Telephone -->
-            <div class="mt-4">
-                <x-label for="telephone" :value="__('Telephone')" />
-                <x-input id="telephone" class="block mt-1 w-full" type="text" name="telephone" required />
-            </div>
-
-            <!-- Adresse -->
-            <div class="mt-4">
-                <x-label for="adresse" :value="__('Adresse')" />
-                <x-input id="adresse" class="block mt-1 w-full" type="text" name="adresse" required />
-            </div>
-
-            <!-- Photo for CIN -->
-            <div class="mt-4">
-                <x-label for="photo_for_cin" :value="__('Photo for CIN')" />
-                <x-input id="photo_for_cin" class="block mt-1 w-full" type="file" name="photo_for_cin" required />
+                <x-label for="last_name" :value="__('Nom')" />
+                <x-input id="last_name" class="block mt-1 w-full" type="text" name="last_name" :value="old('last_name')" required />
             </div>
 
             <!-- Email Address -->
             <div class="mt-4">
                 <x-label for="email" :value="__('Email')" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" required />
+                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+            </div>
+
+            <!-- Date of Birth -->
+            <div class="mt-4">
+                <x-label for="dateBorth" :value="__('Date de naissance')" />
+                <x-input id="dateBorth" class="block mt-1 w-full" type="date" name="dateBorth" :value="old('dateBorth')" required />
+            </div>
+
+            <!-- Address -->
+            <div class="mt-4">
+                <x-label for="adresse" :value="__('Adresse')" />
+                <x-input id="adresse" class="block mt-1 w-full" type="text" name="adresse" :value="old('adresse')" required />
+            </div>
+
+            <!-- CIN -->
+            <div class="mt-4">
+                <x-label for="CIN" :value="__('Numéro CIN')" />
+                <x-input id="CIN" class="block mt-1 w-full" type="text" name="CIN" :value="old('CIN')" required />
+            </div>
+
+            <!-- Profile Photo -->
+            <div class="mt-4">
+                <x-label for="profile_photo" :value="__('Photo de profil')" />
+                <x-input id="profile_photo" class="block mt-1 w-full" type="file" name="profile_photo" />
+            </div>
+
+            <!-- CIN Photo -->
+            <div class="mt-4">
+                <x-label for="cin_photo" :value="__('Photo du CIN')" />
+                <x-input id="cin_photo" class="block mt-1 w-full" type="file" name="cin_photo" />
             </div>
 
             <!-- Password -->
             <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required />
+                <x-label for="password" :value="__('Mot de passe')" />
+                <x-input id="password" class="block mt-1 w-full"
+                                type="password"
+                                name="password"
+                                required autocomplete="new-password" />
             </div>
 
             <!-- Confirm Password -->
             <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-                <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required />
+                <x-label for="password_confirmation" :value="__('Confirmer le mot de passe')" />
+                <x-input id="password_confirmation" class="block mt-1 w-full"
+                                type="password"
+                                name="password_confirmation" required />
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <x-button>
-                    {{ __('Register') }}
+                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                    {{ __('Déjà inscrit?') }}
+                </a>
+
+                <x-button class="ml-4">
+                    {{ __('S\'inscrire') }}
                 </x-button>
             </div>
         </form>

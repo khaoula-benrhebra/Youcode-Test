@@ -17,8 +17,13 @@ class PermissionsTableSeeder extends Seeder
             'view_dashboard' => 'Voir le tableau de bord',
             'upload_documents' => 'Télécharger des documents',
             'pass_quiz' => 'Passer le quiz',
+            'creat_qst' => 'Créer des questions',
+            'edit_qst' => 'Modifier des questions',
+            'delete_qst' => 'Supprimer des questions',
+            'creat_quize' => 'Créer des quiz',
+            'edit_quize' => 'Modifier des quiz',
+            'delete_quize' => 'Supprimer des quiz',
         ];
-        
         foreach ($permissions as $id => $name) {
             Permission::create(['id' => $id]);
             $permissionIds[$id] = $id;
